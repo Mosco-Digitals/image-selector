@@ -1,48 +1,217 @@
-img{
-  height: 150px;
-  width:  150px;
-  border-radius: 100px;
+*{
+  box-sizing: border-box;
+}
+
+body{
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1d2633;
+  background:
+    radial-gradient(circle at top left, rgba(47, 124, 191, 0.18), transparent 32rem),
+    linear-gradient(135deg, #eef5f8 0%, #f8fbf7 45%, #f4eee7 100%);
+}
+
+.navbar{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(1100px, calc(100% - 32px));
+  margin: 20px auto 0;
+  padding: 14px 18px;
+  border: 1px solid rgba(44, 67, 89, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 18px 45px rgba(32, 43, 55, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.brand{
+  color: #15304a;
+  font-size: 20px;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-links a{
+  color: #48596b;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 9px 12px;
+  border-radius: 7px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav-links a:hover{
+  color: #0f5f8f;
+  background: #eaf3f8;
+}
+
+.page-shell{
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 96px);
+  padding: 32px 16px;
+}
+
+.profile-panel{
+  display: grid;
+  grid-template-columns: 220px minmax(0, 360px);
+  gap: 36px;
+  align-items: center;
+  width: min(680px, 100%);
+  padding: 34px;
+  border: 1px solid rgba(44, 67, 89, 0.14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 24px 70px rgba(32, 43, 55, 0.13);
+}
+
+.preview-wrap{
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+#img{
+  height: 180px;
+  width: 180px;
+  border: 8px solid #ffffff;
+  border-radius: 50%;
   object-fit: cover;
-  background-color: #ddd;
+  background: linear-gradient(135deg, #d9e9ef, #f1dfcc);
+  box-shadow: 0 18px 38px rgba(31, 50, 68, 0.18);
 }
-.box{
-  width: 260px;
+
+#file{
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
-textarea{
+
+.upload-button{
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 42px;
+  padding: 0 18px;
+  border-radius: 7px;
+  color: #ffffff;
+  background: #176f9f;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(23, 111, 159, 0.24);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.upload-button:hover{
+  background: #125b83;
+  transform: translateY(-1px);
+}
+
+.form-area{
+  display: grid;
+  gap: 22px;
+}
+
+.box,
+.input-box{
   width: 100%;
-  height: 80px;
-  padding: 8px;
-  border-radius: 10px;
 }
+
+.box{
+  display: grid;
+  gap: 6px;
+}
+
+textarea,
+.input-box input{
+  width: 100%;
+  border: 1px solid #c8d6df;
+  border-radius: 8px;
+  outline: none;
+  color: #1d2633;
+  background: #fbfdff;
+  font-size: 16px;
+  transition: border 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+textarea{
+  min-height: 116px;
+  resize: vertical;
+  padding: 14px;
+  font-family: inherit;
+}
+
+textarea:focus,
+.input-box input:focus{
+  border-color: #176f9f;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(23, 111, 159, 0.12);
+}
+
 .count{
+  margin: 0;
+  color: #667487;
   text-align: right;
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 700;
 }
+
 .input-box{
   position: relative;
-  width: 250px;
 }
-input{
-  width: 100%;
-  padding: 12px;
-  border: solid dodgerblue 1px;
-  outline: none;
-  font-size: 16px;
-  border-radius: 8px;
-  top: auto;
-  bottom: auto;
+
+.input-box input{
+  padding: 15px 13px;
 }
-label{
+
+.input-box label{
   position: absolute;
   left: 12px;
-  top: 12px;
+  top: 15px;
+  padding: 0 5px;
+  color: #667487;
+  background: #fbfdff;
   pointer-events: none;
-  transition: 0.3s;
-  padding: 0.5px;
+  transition: 0.2s ease;
 }
-input:focus+label,
-input:valid+label{
-  top: -12px;
-  font-size: 18px;
-  color: dodgerblue;
+
+.input-box input:focus + label,
+.input-box input:valid + label{
+  top: -9px;
+  color: #176f9f;
+  background: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+@media (max-width: 640px){
+  .navbar,
+  .nav-links{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .brand{
+    width: 100%;
+    text-align: center;
+  }
+
+  .profile-panel{
+    grid-template-columns: 1fr;
+    padding: 24px;
+  }
 }

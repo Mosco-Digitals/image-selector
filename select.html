@@ -3,21 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Image Selector</title>
   <link rel="stylesheet" href="select.css">
-  
 </head>
 <body>
-  <!-- <img src="img.jpg" alt="" id="img">
-  <input type="file" id="file" name="file">
-  <div class="box">
-    <textarea name="" id="txt" maxlength="40" placeholder="type here"></textarea>
-    <p id="count" class="count"></p>
-  </div> -->
-  <div class="input-box">
-    <input type="text" class="in" required>
-    <label for="">username</label>
-  </div>
+  <nav class="navbar">
+    <a class="brand" href="#">Image Selector</a>
+    <div class="nav-links" aria-label="Main navigation">
+      <a href="#">Home</a>
+      <a href="#">Upload</a>
+      <a href="#">Profile</a>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <section class="profile-panel">
+      <div class="preview-wrap">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Selected preview" id="img">
+        <label class="upload-button" for="file">Choose image</label>
+        <input type="file" id="file" name="file" accept="image/*">
+      </div>
+
+      <div class="form-area">
+        <div class="input-box">
+          <input type="text" class="in" id="name" required>
+          <label for="name">Username</label>
+        </div>
+
+        <div class="box">
+          <textarea name="message" id="txt" maxlength="40" placeholder="Write a short caption"></textarea>
+          <p id="count" class="count"></p>
+        </div>
+      </div>
+    </section>
+  </main>
   <script src="select.js"></script>
 </body>
 </html>

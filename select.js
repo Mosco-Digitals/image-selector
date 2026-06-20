@@ -1,14 +1,19 @@
-const image= document.querySelector('#img');
-input= document.querySelector('input');
+const image = document.querySelector('#img');
+const input = document.querySelector('#file');
+const text = document.querySelector('#txt');
+const count = document.querySelector('#count');
 
-input .addEventListener('change', ()=>{
-  image.src = URL.createObjectURL(input.files[0]);
-
+input.addEventListener('change', () => {
+  if (input.files && input.files[0]) {
+    image.src = URL.createObjectURL(input.files[0]);
+  }
 });
 
-let max= 40;
-txt.oninput= ()=>{
-  let left = max - txt.value.length;
-  count.innerText= left + " character left";
-}
-txt.oninput();
+let max = 40;
+
+text.oninput = () => {
+  let left = max - text.value.length;
+  count.innerText = left + " characters left";
+};
+
+text.oninput();
