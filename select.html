@@ -8,16 +8,15 @@
 </head>
 <body>
   <nav class="navbar">
-    <a class="brand" href="#">Image Selector</a>
+    <a class="brand" href="select.html">Image Selector</a>
     <div class="nav-links" aria-label="Main navigation">
-      <a href="#">Home</a>
-      <a href="#">Upload</a>
-      <a href="#">Profile</a>
+      <a href="select.html" class="active">Home</a>
+      <a href="profile.html">Profile</a>
     </div>
   </nav>
 
   <main class="page-shell">
-    <section class="profile-panel">
+    <form class="profile-panel" id="selector-form">
       <div class="preview-wrap">
         <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Selected preview" id="img">
         <label class="upload-button" for="file">Choose image</label>
@@ -25,6 +24,8 @@
       </div>
 
       <div class="form-area">
+        <p class="submit-message" id="submit-message" aria-live="polite"></p>
+
         <div class="input-box">
           <input type="text" class="in" id="name" required>
           <label for="name">Username</label>
@@ -34,8 +35,10 @@
           <textarea name="message" id="txt" maxlength="40" placeholder="Write a short caption"></textarea>
           <p id="count" class="count"></p>
         </div>
+
+        <button class="submit-button" type="submit">Submit</button>
       </div>
-    </section>
+    </form>
   </main>
   <script src="select.js"></script>
 </body>
