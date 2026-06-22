@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Selector</title>
+  <link rel="stylesheet" href="select.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a class="brand" href="select.html">Image Selector</a>
+    <div class="nav-links" aria-label="Main navigation">
+      <a href="select.html" class="active">Home</a>
+      <a href="profile.html">Profile</a>
+    </div>
+  </nav>
+
+  <main class="page-shell">
+    <form class="profile-panel" id="selector-form">
+      <div class="preview-wrap">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" alt="Selected preview" id="img">
+        <label class="upload-button" for="file">Choose image</label>
+        <input type="file" id="file" name="file" accept="image/*">
+      </div>
+
+      <div class="form-area">
+        <p class="submit-message" id="submit-message" aria-live="polite"></p>
+
+        <div class="input-box">
+          <input type="text" class="in" id="name" required>
+          <label for="name">Username</label>
+        </div>
+
+        <div class="box">
+          <textarea name="message" id="txt" maxlength="40" placeholder="Write a short caption"></textarea>
+          <p id="count" class="count"></p>
+        </div>
+
+        <button class="submit-button" type="submit">Submit</button>
+      </div>
+    </form>
+  </main>
+  <script src="select.js"></script>
+</body>
+</html>
