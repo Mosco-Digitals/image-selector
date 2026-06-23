@@ -20,12 +20,7 @@ text.oninput = () => {
 
 text.oninput();
 
-if (new URLSearchParams(window.location.search).get('submitted') === 'true') {
-  submitMessage.innerText = 'Submitted';
-  submitMessage.classList.add('show');
-}
-
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  window.location.href = 'select.html?submitted=true';
+  window.location.reload();
 });
